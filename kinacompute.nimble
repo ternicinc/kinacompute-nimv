@@ -1,6 +1,6 @@
 version       = "0.1.0"
-author        = "Your Name"
+author        = "KinaCompute"
 description   = "KinaCompute framework"
-license       = "MIT"
+license       = "EPL2.0"
 srcDir        = "src"
 bin           = @["main"]
