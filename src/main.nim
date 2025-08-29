@@ -1,10 +1,5 @@
 import kina
 
-let mode = "development"
-let app_version = "0.0.1"
-
-var daemon_server = "None"
-
 const asciiArt = r"""
   _  ___              ____                            _       
  | |/ (_)_ __   __ _ / ___|___  _ __ ___  _ __  _   _| |_ ___ 
