@@ -28,4 +28,6 @@ echo "Hostname: ", info.hostname
 echo "CPU: ", info.cpu
 echo "Memory: ", info.memory 
 echo "RootDisk: ", info.diskRoot
+echo " "
+echo "System information checked succesfully."
 echo ""
