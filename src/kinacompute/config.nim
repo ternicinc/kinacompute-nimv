@@ -66,6 +66,28 @@ var
     tls: true
   )
 
+
+# ------------------------------
+# Optional Image / Cloud Config
+# ------------------------------
+type
+  ImageConfig* = object
+    r2_bucket_name*: Option[string]
+    r2_endpoint*: Option[string]
+    r2_access_key*: Option[string]
+    r2_secret_key*: Option[string]
+    images*: seq[string] 
+
+var
+  images*: ImageConfig = ImageConfig(
+    r2_bucket_name: none(string),
+    r2_endpoint: none(string),
+    r2_access_key: none(string),
+    r2_secret_key: none(string),
+    images: @[]  
+  )
+
+
 # ------------------------------
 # Helper Functions
 # ------------------------------
@@ -81,3 +103,14 @@ proc isSMTPConfigured*(): bool =
 # Helper: check if GitHub auth is configured
 proc isGithubAuthConfigured*(): bool =
   auth.github_id.isSome and auth.github_secret.isSome
+
+# Helper: Check if Image / R2 storage is configured
+proc isImageConfigured*(): bool =
+  images.r2_bucket_name.isSome and
+  images.r2_endpoint.isSome and
+  images.r2_access_key.isSome and
+  images.r2_secret_key.isSome
+
+# Helper: Check if there are any actual images defined
+proc hasImages*(): bool =
+  images.images.len > 0
