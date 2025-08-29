@@ -13,17 +13,18 @@ jobs:
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
-          # Read commits from event JSON
+          # Read the event JSON
           COMMITS=$(jq -r '.commits[] | "- \(.message) by \(.author.name)"' < $GITHUB_EVENT_PATH)
 
-          # Branch name
+          # Build message
           BRANCH="${GITHUB_REF##*/}"
-
-          # Build message with actual newlines
           MESSAGE="Git push on branch **$BRANCH**"$'\n'"Commits:"$'\n'"$COMMITS"
+
+          # Escape quotes for JSON
+          MESSAGE_JSON=$(jq -Rn --arg msg "$MESSAGE" '{"content": $msg}')
 
           # Send to Discord
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d "{\"content\": \"$MESSAGE\"}" \
+               -d "$MESSAGE_JSON" \
                $WEBHOOK_URL
