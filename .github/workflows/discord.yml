@@ -1,19 +1,26 @@
-name: Notify Discord on Push
+name: Discord Notification
 
 on:
   push:
     branches:
-      - main  # change to your branch if needed
+      - main
 
 jobs:
   discord:
     runs-on: ubuntu-latest
     steps:
-      - name: Send Discord message
-        uses: Iloveyouplay/github-discord-webhook@v1
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: |
-            Git push on branch **${{ github.ref_name }}**
-            Commits:
-            ${{ github.event.commits[*].message }}
+      - name: Send message to Discord
+        env:
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          # Build commit messages
+          MESSAGE="Git push on branch **${GITHUB_REF##*/}**\nCommits:"
+          for commit in $(jq -r '.commits[].message' <<< "$GITHUB_EVENT_PATH"); do
+            MESSAGE="$MESSAGE\n- $commit"
+          done
+
+          # Send to Discord
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{\"content\": \"$MESSAGE\"}" \
+               $WEBHOOK_URL
