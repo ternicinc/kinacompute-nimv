@@ -10,6 +10,9 @@ const
   app_state*: string = "development"
   app_port*: int = 3000
 
+  api_port*: int = 4550
+  api_version*: float = 0.1
+
 # ------------------------------
 # Mandatory Configuration
 # ------------------------------
