@@ -18,3 +18,12 @@ echo "Starting the application. Please be patient."
 echo "Initializing", " ", app_name, "..."
 echo " "
 echo "Copyright (C) KinaCompute Foundation"
+echo " "
+echo "Running Systsem Info Checker..."
+
+let info = getSysInfo()
+echo "System Info:"
+echo "OS: ", info.osName
+echo "Hostname: ", info.hostname
+echo "CPU: ", info.cpu
+echo "Memory: ", info.memory

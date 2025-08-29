@@ -1,3 +1,3 @@
 import kinacompute/index
 
-export config
+export config, system_info
