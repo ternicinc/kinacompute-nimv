@@ -8,6 +8,7 @@ import options
 const
   app_name*: string = "KinaCompute"
   app_state*: string = "development"
+  app_port*: int = 3000
 
 # ------------------------------
 # Mandatory Configuration
