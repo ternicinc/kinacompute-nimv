@@ -49,6 +49,7 @@ type
 
 var
   # Example to set heartbeat URL: heartbeat.url = some("https://heartbeat.example.com/ping")
+  # More examples soon.
   heartbeat*: HeartbeatConfig = HeartbeatConfig(url: none(string))
   auth*: AuthConfig = AuthConfig(
     github_id: none(string),
