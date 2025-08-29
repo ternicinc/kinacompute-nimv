@@ -20,6 +20,6 @@ const asciiArt = r"""
 
 echo asciiArt
 echo "Starting the application. Please be patient."
-echo "Initializing", " ", app_name, "..."
+echo "Initializing", " ", app_name, "...."
 echo " "
 echo "Copyright (C) KinaCompute Foundation"
