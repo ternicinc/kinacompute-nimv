@@ -2,7 +2,10 @@ import options
 
 type
     Billing* = object
+
       billingType*: string
+      billingPAYG*: bool
+
       billingAmount*: int # Maybe a string ?
       billingNumber*: int
       issuerName*: string
