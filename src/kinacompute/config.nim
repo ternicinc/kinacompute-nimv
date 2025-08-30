@@ -1,5 +1,3 @@
-# src/kinacompute/config.nim
-
 import options
 
 # ------------------------------
