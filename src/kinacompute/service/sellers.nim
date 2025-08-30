@@ -16,3 +16,5 @@ type
         sellerMarkedPromoted*: bool
         sellerMarkedVeteran*: bool
         sellerMarkedOfficial*: bool
+
+        sellerAccessMarketplace*: bool
