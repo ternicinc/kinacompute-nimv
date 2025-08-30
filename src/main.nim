@@ -30,4 +30,6 @@ echo "Memory: ", info.memory
 echo "RootDisk: ", info.diskRoot
 echo " "
 echo "System information checked succesfully."
+echo " "
+echo "Implementation regrading cloud coming soon.TM."
 echo ""
