@@ -25,3 +25,10 @@ type
 
       platformID*: int
       platformLocation*: string
+
+      planID*: int
+      planName*: string
+      planCost*: string
+      planInterval: string
+      planDiscount*: bool
+      planDiscountPrice*: string
