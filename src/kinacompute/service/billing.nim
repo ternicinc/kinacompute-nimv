@@ -4,8 +4,14 @@ type
     Billing* = object
 
       billingType*: string
-      billingPAYG*: bool
+      billingTypePAYG*: bool
 
+      # If Pay-As-You-Go.
+      billingPAYGLimit*: int
+      billingPAYGOverLimit*: bool
+      billingPAYGExtendedLimit*: bool
+
+      # Applicable for both PAYG and Pre-Paid.
       billingAmount*: int # Maybe a string ?
       billingNumber*: int
       issuerName*: string
