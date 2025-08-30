@@ -32,3 +32,5 @@ type
       planInterval: string
       planDiscount*: bool
       planDiscountPrice*: string
+
+      discountCodeApplied*: bool
