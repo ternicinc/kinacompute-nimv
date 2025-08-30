@@ -14,3 +14,5 @@ type
         sellerDiscount*: int
 
         sellerMarkedPromoted*: bool
+        sellerMarkedVeteran*: bool
+        sellerMarkedOfficial*: bool
