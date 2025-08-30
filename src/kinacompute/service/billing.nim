@@ -5,11 +5,12 @@ type
       billingType*: string
       billingAmount*: int # Maybe a string ?
       billingNumber*: int
-      recipientName*: string
       issuerName*: string
 
-      recipientPlan*: string
+      recipientName*: string
       recipientID*: int
+      recipientPlan*: string
+
       
       issuerID*: int
       issuerOfficial*: bool # If it's a seller or the company itself.
