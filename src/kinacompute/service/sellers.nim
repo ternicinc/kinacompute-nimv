@@ -10,6 +10,7 @@ type
 
         sellerTrustScore*: float
         sellerMarkedScammer*: bool
+        sellerMarkedBanned*: bool
         sellerLevel*: int
         sellerDiscount*: int
 
